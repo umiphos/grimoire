@@ -1,0 +1,136 @@
+				
+--http://prajitr.github.io/quick-haskell-syntax/
+--https://learnxinyminutes.com
+[TIM] <0:00><-><5:00> "Instalacion de docker, ambientacion en MAC"
+	[DES] Instalacion de docker EN UBUNTU 16.04(version nativa de tu escritorio)
+		[COM] sudo apt-get update
+		[COM] sudo apt-get install -y apt-transport-https ca-certificates
+		[COM] sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+		[COM] echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
+		[COM] sudo apt-get update
+		[COM] sudo apt-get install docker-engine
+		[COM] sudo docker run hello-world
+			[DES] con esto ya podemos ver el saludo de docker container
+		[OFT][DES] con estas siguientes lineas evitaremos poner siempre "sudo" al inicio de un comando docker
+			[COM] sudo groupadd docker
+			[COM] sudo usermod -aG docker $USER
+			[COM] docker run hello-world
+				[DES] con esto sabemos si funciono, si no funciono revisa este enlace
+					[lnk] https://docs.docker.com/engine/installation/linux/ubuntulinux/
+	
+
+[TIM] 5:15 muestra como descargar imagen de ubuntu
+	[COM] docker pull ubuntu:14.04
+		[DES] descarga desde docker una imagen, primero buscara localmente, si no lo encuentra lo buscara en docker/hub
+	[COM] docker run -it "<imageName>"
+	[DES] en esta seccion estamos de momento en prueba, por lo tanto no pondre todo el texto aqui de los comandos, asi que se hara lo siguiente, se pone el enlace de donde copiaremos ese texto y lo intentaremos correr, si no funciona eso buscaremos soluciones.... la idea es acabar con los primeros dos videos
+		[lnk] https://hub.docker.com/r/ocaimages/oca-odoo/
+		[lnk] https://hub.docker.com/r/ocaimages/oca-ubuntu-base/
+		[DES] aun no se como configurar GIT, si con el ejemplo que ahi viene, o con mis propios datos
+
+[TIM] <8:00> [DES] Basicamente explica los ocaimages y muestra que se debe de hacer
+	[DES] revisar "notas" ahi vienen los comandos que se requieren para montar esto
+	[DES] podemos avanzar mas rapido usando oca
+		[LNK] "https://hub.docker.com/r/ocaimages/oca-odoo/~/dockerfile/"
+
+[TIM] <18:00> [DES] Avanzando de la instalacion, puede ser desde el punto ocaimages/oca-odoo
+	[COM] sudo useradd -d /home/odoo -m -s /bin/bash -p odoopwd odoo
+		[DES] creas el usuario de Odoo
+	[COM] sudo su - postgres
+		[DES] en lugar de crear el usuario al parecer esto tambien funciona, osea, solo accedes y ya funciono
+		[COM] psql -c "CREATE ROLE odoo LOGIN SUPERUSER INHERIT CREATEDB CREATEROLE;"
+		[COM] exit
+	[COM] sudo su - odoo
+		[DES] se ejecuta con esto el usuario
+		
+[TIM] <30:00> [DES] Basicamente es para lograr copiar odoo 
+	[COM]
+
+
+[TIM] <00:00> [DES] Como hacer llaves SSH para mi GIT, dentro de @odoo
+	[COM] ssh-keygen -t rsa -b 4096 -C "umiphos@gmail.com"
+		[LNK] "https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
+
+[TIM] <00:43> [DES] Introduccion a python
+	
+
+
+
+NOTES:
+Como usar un container previamente levantado, y evitar
+levantar uno nuevo
+docker ps -a
+	(Identificas el container id)
+docker start {CONTAINER_ID}
+docker exec -it {CONTAINER_ID} bash
+
+
+
+
+
+
+
+				########################VIDEO 2.1##################################
+				
+De momento sera sin tiempos, solo una lista de comandos y un tiempo donde aproximadamente el comando fue emitido
+
+
+
+
+0:30
+puro git y una solucion de un bug, que basicamente hace los mismos pasos que ya veniamos haciendo
+tambien menciona lo de merge
+
+HEAD=LOCAL
+si trae un SHA es lo que pulleamos
+
+0:44
+Trabajo colaborativo
+
+1:13
+dice que instalemos python-ldap con apt-get, sigue hablando sobre  la estructura de Odoo
+
+1:16
+pytthon odoo scaffold mymoodule ../
+genera una estructura plantilla para algo....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Maneras de instalar Odoo y porque por git es mejor
+Minuto 15:00
+SSH y github
+Minuto 30:00 al 38:00
+Diferencia de odoo/odoo vs oca/ocb
+Minuto 38 al minuto 41
+Introducción a python
+Minuto 43
+
+[DES] descripcion de alguna seccion o de la accion tomada, puede ser tan largo como sea necesario el comentario
+[COM] comando a ejecutar, como en docker el comando CMD
+[OFT] este tipo de tags no necesariamente tienen algo que ver con el tema, es basicamente OFF TOPIC
+[lnk] para poner enlaces y dejar a la descripcion limpia, usualmente va debajo de la descripcion o al final de una serie de notas y comandos
+

@@ -1,0 +1,61 @@
+
+
+USD = self.env.ref('base.USD').id
+PEN = self.env.ref('base.PEN').id
+compa = sesf.env['res.company'].create({'name':"this name",'currency_id':USD})
+journals = self.env['account.journal'].search([('code', '=', 'BOL')])   
+
+
+Create partner
+https://github.com/odoo/odoo/blob/fc2e80cb4bcc450762c7ac5cb82a3e2d88062b38/odoo/addons/base/tests/test_basecase.py
+
+Create Journal, create company, create move, 
+https://github.com/odoo/odoo/blob/387b2acfcbfd5d4525ef8453e0c1999753246576/addons/account/tests/test_reconciliation.py
+
+Cheating while creating the company
+self.env.ref('base.main_company').write({'currency_id': self.currency_euro_id})
+
+
+Boletas:
+New stuff:
+    account.moves.lines
+        amount of, emmmh, lines on a journal, they have the same id_journal between them, so that's the way to call them
+        
+
+About this issue we need to change the type in the journal to Boleta, once we do this we need to add (apart from the basic asserts) this new tests cases:
+
+    if there are moves associated to a journal_id
+    if whe journal_id is equal on the move and on the invoices
+    
+Currently working:
+moves = self.env['account.move.line'].search([('journal_id','=',self.journal.id)], limit = 1)
+moves = self.env['account.move.line'].search([('invoice_id','=',invoice.id)], limit = 1)
+invo = self.env['account.invoice'].search([('journal_id','=',self.journal.id)])
+move_line = self.env['account.journal'].search([('journal_id', '=', self.journal.id)])
+self.env['ir.sequence'].search([])
+debito = self.journal_debito.write({'charge_sequence':True, 'charge_sequence_id':})
+ context="{'default_filter_refund2': 'charge'}"
+
+Hasta el invoice_validate tenemos una factura/boleta normal, una vez que esta balidada podemos hacer los siguientes movimientos
+
+Crear un wizard para:
+debito      >>> Charge
+credito     >>> Refund
+
+debito = self.refund.with_context({
+'active_ids': invoice.ids, }).create({
+'description': 'This debit description',
+'filter_refund': 'refund'
+})
+
+debit = self.env['account.invoice'].search([(
+'origin', '=', invoice.number),
+('type', '=', 'out_refund')])
+
+self.journal.write({'charge_sequence': True,'charge_sequence_id': self.env.ref('l10n_pe_edi.debit_note_sequence').id})   
+
+
+
+debit = self.refund.with_context({'description': 'Factura con nota de debito','filter_refund': 'charge'})
+debit = self.refund.with_context({'active_ids': invoice.ids, }).create({'description': 'Factura con nota de debito','filter_refund': 'charge'})
+credit = self.refund.with_context({'active_ids': invoice.ids, }).create({'description': 'Refund from unit test gratuito ','filter_refund': 'refund'})

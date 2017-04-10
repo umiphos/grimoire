@@ -1,0 +1,1 @@
+wget​ https://raw.githubusercontent.com/odoo/odoo/8.0/requirements.txt

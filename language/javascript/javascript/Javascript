@@ -1,0 +1,181 @@
+Resources:
+Javascript.crockford.com
+
+developer.moxilla.org/en-US/docs/JavaScript
+
+(we need to check this out, it talks about webkit)<
+developer.apple.com/library/safari
+
+quirksmode.org
+
+
+
+div > p
+give me the next child of div, but not all the p
+
+
+Stuffy Javascript
+true    this 2 have defferent syntaxis than Python, we need them lower case
+false   
+===     stands for a condition of equality
+
+object
+var animal = {
+    'genus' : 'bird',
+    'species' : 'raven',
+    'callType' : 'squawky',
+    'quote' : 'Nevermore',
+    'maxOffSpring' : 5,
+    'noisy' : true,
+    'deadly' : false
+}
+
+accessing an object
+animal.genus                Like a common object
+animal.["genus"]            Like a list on python
+
+adding a new field
+animal.color = 'black'
+animal["where it lives"] = "in a tree"
+
+deleting a property
+
+delete animal.color
+
+Always remember that:
+animal2=animal
+animal2.genus="this animal genus"
+animal.genus
+    "this animal genus"
+    
+This actually frigten me... a lot... is not a compy is a reference! why tho?
+
+
+
+Array
+var counties = [
+'One',
+'Two',
+'Three',
+'Four',
+'Five'
+];
+
+
+Modify
+counties[N] = value
+counties.push("value");
+counties.pop()
+counties.splice(startPOS,endPOS)
+
+
+
+
+##################################################################CSS
+<div>
+    outer line separator?
+<span>
+    inline selector
+
+background-image: url(image.png);
+background-repeat: repeat(-x-y)
+background-attachment: scroll;  basic scroll
+background-attachment: fixed;   tied the image on the background
+background-color: rgba(5,5,5,.65)   adding alfa chanel to background
+
+
+border-radius:10px;
+-moz-border-radius:10pxM
+-webkit-border-radius: 10px;
+-moz-box-shadow: 5px 5px 10px #999;
+
+##################################################################LESS
+Color functions
+lighten         (color,amount)
+darken          (color,amount)
+saturate        (color,amount)
+desaturate      (color,amount)
+fadein          (color,amount)
+fade            (color,amount)
+spin            (color,degrees)
+mix             (color1,color2)
+hue             (color)
+saturation      (color)
+lighness        (color)
+alpha           (color)
+
+Math
+round           (number)
+ceil            (number)
+floor           (number)
+percentage      (number)
+
+@var
+
+http://sass-lang.com/install
+
+
+##################################################################Sass
+gem install sass
+sass --update <nameFile.css>
+sass --update Ch4:Ch4
+
+variables:
+numbers
+strings
+color
+booleans
+nulls
+lists
+
+
+$var
+@mixins as functions... pretty cool
+
+Built-in
+the same as saas plus
+grayscale
+complement
+invert
+##################################################################jQuery
+("tagName")
+("#id=")
+(".className")
+("tag.className")
+("tag#id.className")
+("*")
+
+Filters
+:first, :last
+:even, :odd
+:gt(), :lt(), :eq()
+:animated
+:focus
+:not(expr)
+
+when the document is ready
+$("document").ready(function(){
+
+});
+insert in the last element
+.append()
+insert in the f
+.pretend()
+.appendTo()
+.bofore()
+.after()
+.empty()
+.remove()
+.addClass()
+.removeClass()
+
+
+
+
+
+
+
+
+
+
+

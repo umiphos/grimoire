@@ -1,0 +1,102 @@
+# Instalacion base antes de Odoo
+
+    
+#configuraciones clave, en el video no dicen esto.
+DEBIAN_FRONTEND="noninteractive"
+
+PYTHONIOENCODING="UTF-8"
+
+echo 'APT::Get::Assume-Yes "true";' >> /etc/apt/apt.conf \
+    && echo 'APT::Get::force-yes "true";' >> /etc/apt/apt.conf
+
+
+apt-get update -q && apt-get upgrade -q
+
+
+apt-get install python-dateutil python-feedparser python-gdata python-ldap \
+    python-libxslt1 python-lxml python-mako python-openid python-psycopg2 \
+    python-pybabel python-pychart python-pydot python-pyparsing python-reportlab \
+    python-simplejson python-tz python-vatnumber python-vobject python-webdav \
+    python-werkzeug python-xlwt python-yaml python-zsi
+
+
+apt-get install --allow-unauthenticated -q bzr \
+	python \
+	python-dev \
+	python-setuptools \
+	git \
+	vim \
+	nano \
+	wget \
+	tmux \
+	htop
+
+#aqui esto requiere que sea este usuario o que sea mi usuario
+git config --global user.name oca_docker \
+&& git config --global user.email hello@oca.com
+
+#librerias basicas que aun no se que pedo con ellas, solo instalalas y luego vemos
+apt-get install --allow-unauthenticated -q libssl-dev  libyaml-dev  libjpeg-dev  libgeoip-dev  libffi-dev  libqrencode-dev  libfreetype6-dev  zlib1g-dev  libpq-dev
+
+apt-get install libssl-dev \
+   libyaml-dev \
+   libjpeg-dev \
+   libgeoip-dev \
+   libffi-dev \
+   libqrencode-dev \
+   libfreetype6-dev \
+   zlib1g-dev \
+   libpq-dev
+
+#
+
+ln -s /usr/include/freetype2 /usr/local/include/freetype \
+	&& ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/ \
+	&& ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib/ \
+	&& ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/ 
+
+
+
+
+apt-get install python-pip
+
+apt-get install pylint
+###################################################### Aqui empieza oca-ubuntu-base version de ubuntu 14.04
+#dentro de oca-odoo
+
+#un fix que dice
+locale-gen fr_FR \
+    && locale-gen en_US.UTF-8 \
+    && dpkg-reconfigure locales \
+    && update-locale LANG=en_US.UTF-8 \
+    && update-locale LC_ALL=en_US.UTF-8 \
+    && echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+
+#instalando postgres
+apt-get install --allow-unauthenticated -q postgresql-9.3 \
+    postgresql-contrib-9.3 \
+    postgresql-client-9.3
+
+##########################despues de postgres
+
+mkdir -p /etc/ssl/private-copy \
+    && mkdir -p /etc/ssl/private \
+    && mv /etc/ssl/private/* /etc/ssl/private-copy/ \
+    && rm -rf /etc/ssl/private \
+    && mv /etc/ssl/private-copy /etc/ssl/private \
+    && chmod -R 0700 /etc/ssl/private \
+    && chown -R postgres /etc/ssl/private
+
+
+su - postgres /etc/init.d/postgresql start \
+    && su - postgres -c 'psql -c "CREATE ROLE root LOGIN SUPERUSER INHERIT CREATEDB CREATEROLE;"'
+
+
+mkdir /extras
+
+git clone https://github.com/OCA/maintainer-quality-tools.git -b master /extras/mqt
+
+WITHOUT_ODOO="1" SHIPPABLE="true" WITHOUT_DEPENDENCIES="" /extras/mqt/travis/travis_install_nightly
+
+WITHOUT_DEPENDENCIES 1
+
