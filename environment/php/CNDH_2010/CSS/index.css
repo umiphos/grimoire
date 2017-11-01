@@ -1,0 +1,66 @@
+body{ background-color: #73babe; 
+
+
+min-width:1024px;
+margin-top: 6em;
+
+
+border-style:solid;
+border-color: #fff;
+
+}
+
+#contenedor{min-width:1024px;
+
+ max-width:1000px;
+ background-repeat:no-repeat; 
+ margin-left: 8em; 
+ margin-left: 8em;
+ background: url(imagenes/3.jpg) no-repeat center center;
+ /*background-position:right;*/
+ background-color: #73babe;
+}
+
+#menu{
+  margin-left: 6em;
+
+ color:#fff;
+
+}
+
+#menu h1{
+
+min-width:800px;
+ margin-left: 7em;
+
+}
+
+#error{
+ color:#ffffff;
+
+}
+
+#formulario{
+margin-left: 10em;
+margin-top: 10em;
+
+
+margin:center;
+  min-height:40em;
+
+}
+
+form{
+margin-top:6em;
+margin-left: 6em;
+
+}
+
+/*#contenedor{
+min-height:40em;
+margin-right: 1.5em;
+
+
+
+ margin-left: 1.5em;
+}*/

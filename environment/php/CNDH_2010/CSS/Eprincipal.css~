@@ -1,0 +1,395 @@
+body{min-width:1024px;
+ background-color:#fff;
+  max-width:1024px;
+  height:761px;
+  border: 1;
+ border-style:solid;
+ border-color: #000;
+ background: url(interfaz/fondo.jpg)no-repeat left center;
+ 
+  margin: 0px; 
+ padding-top: 0px;
+ padding-left: 0px;
+ }
+
+ 
+ 
+ 
+ /*Encabezado diseño*/
+#Encabezado{
+ max-width:1024px;
+ min-width:1024px;
+ min-height:95px; 
+background: url(interfaz/encabezado.jpg) no-repeat left;
+ color: #551d03;
+ //background-color:#4682B4;
+ /*border: 2;
+ border-style:solid;
+ border-color: #000;
+*/
+
+
+}
+
+#Encabezado h2{
+padding-top: 35px;	
+	
+	}
+/*Subtitulo diseño*/
+
+#Subtitulo{
+/*border:2;
+border-style:solid;
+border-color:#000;*/
+ max-width:1024px;
+ min-width:1024px;
+ }
+
+#Subtitulo h2{
+ padding-left:20em;
+ color:#4682B4;
+
+}
+
+
+/*opciones*/
+#Menus{
+	border:2;
+border-style:solid;
+border-color:#000;	
+	
+	}
+/*Menu diesño*/
+
+#Menu{
+min-height:404px; 
+float:left;
+padding-top: 6em;
+
+padding-right:0em;
+}
+
+
+
+#Menu ul{
+clear: both;
+float:left;
+width:100%;
+max-width:1422px;
+background-color: #73babe; 
+list-style: none;
+padding:0;
+margin:0;
+border:1px solid #efe3d8;
+padding-top:.1em; 
+
+}
+
+#Menu ul li{
+  
+ /*float:left;*/ 
+ border-bottom:1px solid #efe3d8;
+ border-top: 0px solid #efe3d8;
+ background: #fff;
+ 
+}
+  
+#Menu ul li  a:link, #Menu ul li a:visited{
+ 
+ padding: .2em 1em .2em 1em;
+ display:block;
+ text-decoration:none;
+ color:#064184;
+
+ border-top: 0px solid #fff;
+ border-right: solid #fff;
+ border-bottom:1px solid #efe3d8;
+ background: url(interfaz/btn1.jpg) repeat-x center center;
+}
+
+#Menu ul li.seleccionado{
+color:#064184;
+}
+
+#Menu ul li a:hover{
+color:#000;
+}
+
+
+/*Contenedor diseño*/
+#Contenedor{
+ float:left;
+ min-height:500px; 
+ 
+/*border:1;
+border-style:solid;
+border-color:#4682B4;
+*/
+max-width:835px;
+min-width:835px;
+ 
+ 
+}
+
+/*Buscador diseño */
+#Buscador{
+float:left;
+ /*border: 2;
+ border-style:solid;
+border-color: #000;*/
+padding-left:2em;
+padding-top:1em;
+ max-width:350px;
+ min-width:350px;
+}
+
+#BuscadorAvansado {
+float:left;
+ border: 2;
+ border-style:solid;
+border-color: #4682B4;
+
+ max-width:830px;
+ min-width:830px;
+}
+
+#Opciones{
+ 
+float:left;
+
+
+}
+#Opciones ul{
+clear: both;
+float:left;
+width:100%;
+
+background-color: #fff; 
+list-style: none;
+padding:0;
+margin:0;
+border:1px solid #fff;
+padding-top:.1em; 
+
+}
+
+
+#Opciones ul li{
+  font-family:"Times New Roman";
+ float:left;
+ border-bottom:0px solid #fff;
+ border-top: 0px solid #fff;
+ background: #fff;
+ /* background: url(imagenes/menu.gif) repeat-x center center;*/
+}
+
+#Opciones ul li  a:link, #Opciones ul li a:visited, #Opciones ul li input {
+ font-family:"Times New Roman";
+ font-size: 16px;
+ padding: .2em 1em .2em 1em;
+ display:block;
+ text-decoration:none;
+ color:#064184;
+
+ border-top: 1px solid #fff;
+ border-right: solid #fff;
+ border-bottom:1px solid #fff;
+ background: url(interfaz/btn1.jpg) repeat-x center center;
+}
+
+
+/*Propiedades diseño*/
+#Propiedades{
+float:left;
+
+ border: 1px;
+ border-style:solid;
+border-color: #d9bc8d;
+background-color:#f1e6d6;
+color:#000;
+min-width:450px;
+min-height:400px;
+
+    opacity: .9;
+  -moz-opacity: 0.2;
+filter: alpha(opacity=20);
+	
+}
+
+
+#Propiedades2{
+float:left;
+min-width:750px;
+
+ border: 1px;
+ border-style:solid;
+border-color: #d9bc8d;
+background-color:#f1e6d6;
+
+}
+
+#Propiedades a{
+color:#000;
+}
+
+/* Resultados */
+#Resultados{
+float:left;
+
+/* border:1;
+ border-style:solid;
+border-color: #20B2AA; 
+max-width:320px;
+min-width:320px;
+ height:75px;
+ */
+ 
+height:450px;
+width:320px;
+overflow:scroll;
+
+border: 1px;
+ border-style:solid;
+border-color: #d9bc8d;
+ 
+}
+
+#ResultadosAvansado{
+max-width:950px;
+min-width:950px;
+
+}
+
+.columna{
+ border:0;
+ border-style:solid;
+ border-color: #20B2AA;	
+ color:#551d03;
+ //background-color:#4682B4;
+ background: url(interfaz/tabla.jpg) repeat-x center center;
+ 
+}
+
+
+
+
+
+
+
+/*Pie diseño*/
+
+#pie{
+
+ 
+  
+  
+  max-width:1024px;
+ min-width:1024px;
+
+ 
+ padding: 0;
+ padding-top:-1px;
+ padding-left: -1em; 
+ padding-right:0px; 
+ clear:both;
+ border: 0px solid black;
+ 
+  height:20px;
+ //background-color:#4682B4;
+ border: 0;
+ border-style:solid;
+ border-color: #000;
+
+ font-size:14px;
+ color:#fff; 
+ text-align:center;
+ margin: 0px; 
+  //background: url(interfaz/pie.jpg) no-repeat left center;
+  
+  min-height:163px; 
+  min-width: 1024px;
+ }
+ p{
+ color: #7f8038;
+ margin:0;
+ padding: 0;
+ text-align: center; 
+ font-size:12px;
+}
+
+
+
+
+/*Clases para menus*/
+
+/* colorea los inputs enfocados*/
+
+
+input:focus {
+border: 1px solid #20B2AA;
+
+}
+
+
+/*Limpiador de float*/
+.clear{
+clear:both;
+}
+
+/*ELEmentos flotantes*/
+.form1{
+float:left;
+border: 1px;
+ border-style:solid;
+border-color: #d9bc8d;
+}
+.form2{
+float:rigth;
+
+}
+
+/*no listSttype */
+.menu li{
+list-style-type:none;
+ 
+}
+
+.foto{
+width: 200px;
+height: 200px;
+padding-left:2em;
+
+}
+/*
+
+#menu li{
+list-style-type:none;
+ 
+
+
+}
+
+
+
+#buscador{
+float:left;
+ border: 2;
+ border-style:solid;
+border-color: #000;
+min-width:327px;
+}
+
+#resultados{
+min-width:200px;
+
+
+float:left;
+ border: 2;
+ border-style:solid;
+border-color: #000;
+
+}
+
+
+
+*/
