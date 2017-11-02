@@ -1,0 +1,27 @@
+<html>
+    <head>
+    <!--http://bootsnipp.com/snippets/MR9Al-->
+        <title>Login FM4</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../static/login.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-page">
+            <div class="form">
+                <form action="" method="POST" class="login-form">
+                    <input type="text" 		placeholder="username" name="username"	value="{{request.form.username }}" required/>
+                    <input type="password" 	placeholder="password" name="password"	value="{{request.form.password }}" required/>
+                    <input type="submit" 	id="submit" value="Login"/>
+                </form>
+                {% if error %}
+                    <p class="error"><strong>Error:</strong> {{ error }}
+                {% endif %}
+                <p class="message"><a href="/loginVolunteer">Soy Voluntario</a></p>
+            </div>
+        </div>
+    </body>
+</html>
+

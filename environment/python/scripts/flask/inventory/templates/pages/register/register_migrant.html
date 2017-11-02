@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <!--http://bootsnipp.com/snippets/MR9Al-->
+        <title>Register</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../static/login.css" rel="stylesheet">
+    </head>
+    <body>
+		<nav class="navbar navbar-default ">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li class="message"><a href="newAdmin">Registrar administrador</a></li>
+					<li class="message"><a href="newVolunteer">Registrar voluntario</a></li>
+				</ul>
+			</div>
+		</nav>
+
+        <div class="login-page">
+            <div class="form">
+				<form action="" method="POST" class="login-form">
+					<input type="text"		placeholder="name" 		name="name"			value="{{request.form.name}}"/>
+                    <input type="text"		placeholder="last_name"	name="last_name"	value="{{request.form.last_name}}"/>
+                    <!--<input type="text" 		placeholder="Clave director"/>-->
+					<input type="file" name="profile" accept="image/*">
+                    <input type="submit" 	id="submit" value="Registrar"/>
+                </form>
+                {% if error %}
+                    <p class="message"><strong>Error:</strong> {{ error }}
+                {% endif %}
+                
+                {% if success %}
+                    <p class="success"><strong>Success:</strong> {{ success }}
+                {% endif %}
+            </div>
+        </div>
+	</body>
+</html>
