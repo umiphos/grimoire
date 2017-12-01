@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href='/static/style.css'/>
+	</head>
+	<body>
+		<title>Configurate</title>
+		<form action="Configurate" method="post">
+			Latitude: <input type="text" id="lat" name="lat"><br>
+			Longitude: <input type="text" id="lon" name="lon"><br>
+			<p id="demo"></p>
+			<input type="submit">
+		</form>
+		<button onclick="getLocation()">Get GPS</button>
+		
+		<script>
+		
+		
+			var x = document.getElementById("demo");
+			var lat = document.getElementById("lat");
+			var lon = document.getElementById("lon");
+		
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					x.innerHTML = "Geolocation is not supported by this browser.";
+				}
+			}
+
+			function showPosition(position) {
+				lat.value = position.coords.latitude
+				lon.value = position.coords.longitude;
+				///x.innerHTML = position.coords.latitude;
+				
+			}
+		</script>			
+	</body>
+</html>
