@@ -13,3 +13,9 @@ flake8 . --config=/cfg/travis_run_flake8.cfg
 pylint . --rcfile=/cfg/travis_run_flake8.cfg **not shure about this one**
 pep8 . --config=/cfg/travis_run_flake8.cfg
 
+
+**Running a new server without t2d**
+Run first the addons
+/home/odoo/odoo-11.0/odoo-bin -d bundle --addons-path=/home/odoo/build/Vauxoo/odoo-peru,/home/odoo,/home/odoo/odoo-11.0/addons,/home/odoo/odoo-11.0/odoo/addons,/home/odoo/enterprise/
+
+Then init the modules that you need:q

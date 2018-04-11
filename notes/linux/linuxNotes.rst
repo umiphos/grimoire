@@ -142,4 +142,9 @@ Full class of certificates, really, here is tons of info
 ========================================================
 https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs
 
+How search with grep leaving out some files
+=========================================================
+Tested and working well in every environment so far
+grep -r --color --exclude-dir={custom,lib,scripts} --exclude={*.xml,error_log} "beta" .
 
+https://gist.github.com/a1phanumeric/5346170
