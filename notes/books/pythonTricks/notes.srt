@@ -1,0 +1,23 @@
+Page 33
+```python
+
+from contextlib import contextmanager
+
+@contextmanager
+def managed_file(name):
+    try:
+        f = open(name, 'w')
+        yield f
+    finally:
+    f.close()
+
+with managed_file('hello.txt') as f:
+    f.write('hello, world')
+    f.write('by now')
+```
+
+The example using the context manager will close at the end of the with statement, meaning that it will receive all the writes thanks to yield.
+
+------------------------------------------------------------------------------
+
+
