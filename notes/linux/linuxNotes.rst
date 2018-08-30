@@ -148,3 +148,19 @@ Tested and working well in every environment so far
 grep -r --color --exclude-dir={custom,lib,scripts} --exclude={*.xml,error_log} "beta" .
 
 https://gist.github.com/a1phanumeric/5346170
+
+
+Search and replace
+=========================
+
+grep -rl --exclude-dir=.git <keyword> |xargs sed -i 's/find/replace/g'
+
+grep -rl will show us the results in a list
+--exclude will do that, exclude a dir
+<keyword> is what we are searching
+
+| pipe is to apply another layer of analisis to the current list
+xargs is to grab the previous results and apply another layer of application
+sed -i is to replace
+'s/find/replace/g' string to find and replace in the results
+
