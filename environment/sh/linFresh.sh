@@ -48,3 +48,7 @@ wget https://telegram.org/dl/desktop/linux
 http://www.omgubuntu.co.uk/2016/06/install-steam-on-ubuntu-16-04-lts
 sudo add-apt-repository multiverse
 sudo apt update && sudo apt install steam
+
+# Install travis2docker
+sudo pip install  --upgrade git+https://github.com/Vauxoo/travis2docker.git
+echo 'alias t2d="travisfile2dockerfile --root-path=${HOME}/.t2d"' >> ~/.bashrc

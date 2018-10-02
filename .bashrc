@@ -14,4 +14,4 @@ https://github.com/odoo/odoo/issues/new
 
 Example
 https://github.com/odoo/odoo/issues/15279
-
+t2d=travisfile2dockerfile --root-path=$HOME/t2d 

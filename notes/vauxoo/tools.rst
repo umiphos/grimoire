@@ -19,3 +19,11 @@ Run first the addons
 /home/odoo/odoo-11.0/odoo-bin -d bundle --addons-path=/home/odoo/build/Vauxoo/odoo-peru,/home/odoo,/home/odoo/odoo-11.0/addons,/home/odoo/odoo-11.0/odoo/addons,/home/odoo/enterprise/
 
 Then init the modules that you need:q
+
+**Errors while installing travis2docker**
+https://github.com/pypa/pip/issues/5221#issuecomment-382069604
+The error after upgrading pip, after searching in the web I found this solution to work in the environment at the time.
+hash -r pip # or hash -d pip
+python -m pip uninstall pip  # this might need sudo
+sudo apt install --reinstall python-pip
+pip install --upgrade pip
