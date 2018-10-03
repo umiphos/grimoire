@@ -52,3 +52,5 @@ sudo apt update && sudo apt install steam
 # Install travis2docker
 sudo pip install  --upgrade git+https://github.com/Vauxoo/travis2docker.git
 echo 'alias t2d="travisfile2dockerfile --root-path=${HOME}/.t2d"' >> ~/.bashrc
+# This works in 16.04
+sudo apt install compizconfig-settings-manager compiz-plugins-extra
