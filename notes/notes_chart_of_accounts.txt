@@ -1,0 +1,75 @@
+self.env(user=self.uid)).create({
+	'partner_id': partner.id,
+	'type': 'out_invoice',
+	'journal_id': (journal_id or self.journal_id).id,
+	'invoice_line_ids': [(0, 0, {
+		'product_id': product.id,
+		'uom_id': product.uom_id.id,
+		'quantity': 1,
+		'price_unit': invoice_amount,
+		'name': 'new line #1',
+		'account_id': self.env['account.account'].search([], limit=1),})],})
+
+
+
+
+ve como se crea esto
+data_account_type_current_assets
+
+self.env['account.account.type'].create({
+	'name': 'Current Assets', 
+	'type': 'other,
+	'include_initial_balance': True
+})
+
+self.env['account.account.template'].create({
+	'name':'Caja y bancos',
+	'code': 103103,
+	'user_type_id': self.env['account.account.type'].search([], limit=1)
+})
+
+
+self.env['account.chart.template'].create({
+	'name':'name',
+	'currency_id': self.ref('base.PEN'),
+	'transfer_account_id': self.env['account.account.template'].search([], limit=1)
+})
+
+para payable y receivable
+self.env['account.account'].create({
+	'code': '34PRN0',
+	'name': 'acount test',
+	'user_type_id': account_type.id,
+	'reconcile': True
+})
+
+================================0
+
+account_type = self.env['account.account.type'].create({'name': 'Current Assets','type': 'other','include_initial_balance': True})
+
+account_template = self.env['account.account.template'].create({'name':'Caja y bancos','code': 103103,'user_type_id': account_type.id})
+
+account_chart = self.env['account.chart.template'].create({'name':'name','currency_id': self.ref('base.PEN'),'transfer_account_id': account_template.id})
+
+account_account = self.env['account.account'].create({'code': '34PRN0',	'name': 'acount test', 'user_type_id': account_type.id,'reconcile': True})
+
+account_template.chart_template_id = account_chart
+
+
+
+self.uid.company_id.chart_template_id = self.account_chart
+
+Creando invoice
+self.env['account.invoice'].with_env(self.env(user=self.uid)).create({'partner_id': partner.id,'type': 'out_invoice','journal_id': (journal_id or self.journal_id).id,'invoice_line_ids': [(0, 0, {'product_id': product.id,'uom_id': product.uom_id.id,'quantity': 1,'price_unit': invoice_amount,'name': 'new line #1','account_id':self.account_template.id,})],})
+
+
+The XML
+=====================================
+<record id="70111_01" model="account.account.template">
+	<field name="name">Ventas  - Mercaderías / mercaderías manufacturadas terceros - Categoria de productos 01</field>
+	<field name="code">70111.01</field>
+	<field name="reconcile" eval="False"/>
+	<field ref="account.data_account_type_other_income" name="user_type_id"/>
+	<field name="chart_template_id" ref="pe_chart_template"/>
+</record>
+
