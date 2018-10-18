@@ -12,4 +12,4 @@
 
 ### To delete those anoying branches
 
-git branch -d -r remote/branch
+git branch -D -r remote/branch
