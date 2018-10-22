@@ -13,3 +13,8 @@
 ### To delete those anoying branches
 
 git branch -D -r remote/branch
+
+
+### How to migrate between versions
+Check the command for the migration
+https://github.com/OCA/maintainer-tools/wiki/Migration-to-version-12.0#user-content-technical-method-to-migrate-a-module-from-110-to-120-branch
