@@ -107,14 +107,6 @@ python odoo-bin --conf=../odoo.conf
 	con esto ejecutamos odoo como siempre lo hemos hecho
 
 
-Restaurando una base de datos en postgres
-==========================================
-
-createdb dbname
-cd al area donde este la base.sql
-psql dbname < database_bump.sql
-enjoy.
-
 
 =============================================
 Public key, private key, and a funny journey

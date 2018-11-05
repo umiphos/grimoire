@@ -9,3 +9,17 @@ Con **\x** podemos ver tener una vista vertical de los datos que estamos consult
   - **pg_lsclusters** nos mostrara el estado de las versiones de y donde podemos ver los logs
   - **pg_ctlcluster 9.6 main start** hara el proceso que no podemos con el primer comando
   - En el caso que manejo para este ejemplo con eso es mas que suficiente, intentar levantar nuevamente el servicio
+
+Restaurando una base de datos en postgres
+==========================================
+
+createdb dbname
+cd al area donde este la base.sql
+psql dbname < database_bump.sql
+enjoy.
+
+
+Creando un backup para no actualizar cada vez si cometes un error
+=================================================================
+
+createdb -O odoo -T base_que_copiaremos base nueva
