@@ -17,5 +17,25 @@ env.['employee'].search([('id', '=', 18)])
 self.env.cr.fetchall()
 
 
+Dealing with many2many
+===========================
 
+This web has everything about widgets
+==================================================
+https://www.cybrosys.com/blog/many2many-fields-and-its-widgets-odoo
 
+**In case the web dies, a summary from it's content:**
+
+many2many widgets
+many2many widget (default)
+
+- many2many_tags widget
+- many2many_checkboxes  widget
+- many2many_kanban widget
+- many2many_binary widget
+- x2many_counter widget
+
+**The simple way to add a many2many**
+
+field_name = fields.Many2many('res.partner',string="many2many_default")
+<field name="field_name"/>
