@@ -39,3 +39,14 @@ many2many widget (default)
 
 field_name = fields.Many2many('res.partner',string="many2many_default")
 <field name="field_name"/>
+
+Calling a server action from tests
+======================================
+If you are going to run a server action on_create or on_write and you need it for a test, you can always do it this way
+server_action.run_action_code_multi(server_action, eval_context=dict({}, active_id=team_a.id, active_model='crm.team', env=self.env, record=team_a))
+
+Another way to achive this is importing this
+from odoo.tests import tagged
+
+@tagged('post_install', '-at_install')
+class MyClass()
