@@ -50,3 +50,14 @@ from odoo.tests import tagged
 
 @tagged('post_install', '-at_install')
 class MyClass()
+
+Adding a nice search parameter for you want
+==================================
+
+Aparently is just an inherit of the filter/search view, after that we just make an xpath like this
+
+<xpath expr="//search" position="inside">
+<field name="your_field_to_search" string="Some random name" filter_domain="[('any_value_to_filter','ilike', self)]"/>
+</xpath>
+
+If you want to make other fields in the search, just add pipe | and then add any other value you want. Remember that the context value you are writing in the search field, is self.
