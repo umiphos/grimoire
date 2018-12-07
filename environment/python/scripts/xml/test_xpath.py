@@ -13,3 +13,11 @@ namespaces = {'cbc': 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicCo
 
 
 value = document.xpath(xpath_1, namespaces=namespaces)
+
+
+# This is a small method to set a given dict of values into a given XML
+def set_values(values, namespaces, xml):
+    for value in values:
+        xml.xpath(value, namespaces=namespaces)[0]._setText(values.get(
+            value
+        ))
