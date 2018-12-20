@@ -54,3 +54,6 @@ sudo pip install  --upgrade git+https://github.com/Vauxoo/travis2docker.git
 echo 'alias t2d="travisfile2dockerfile --root-path=${HOME}/.t2d"' >> ~/.bashrc
 # This works in 16.04
 sudo apt install compizconfig-settings-manager compiz-plugins-extra
+
+# We need this, is to set names to add names to desktops
+sudo apt install compiz compizconfig-settings-manager compiz-plugins
