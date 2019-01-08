@@ -145,7 +145,7 @@ https://gist.github.com/a1phanumeric/5346170
 Search and replace
 =========================
 
-grep -rl --exclude-dir=.git <keyword> |xargs sed -i 's/find/replace/g'
+grep -rl --exclude-dir=.git <keyword> | xargs sed -i 's/find/replace/g'
 
 grep -rl will show us the results in a list
 --exclude will do that, exclude a dir
@@ -155,4 +155,17 @@ grep -rl will show us the results in a list
 xargs is to grab the previous results and apply another layer of application
 sed -i is to replace
 's/find/replace/g' string to find and replace in the results
+
+
+Black screen and nvidia problems
+=================================
+In my case I have an nvidia gtx 1080 and after login I get a black screen, so
+in order to show the proper boot we need to follow this steps:
+
+1. In the boot(booty?) screen we need to press e in the linux OS
+2. Inside we need to add nomodeset at the end of the line that says ro quiet
+   splash, it's almos the last line in the case of ubuntu 18
+3. Press F10
+
+
 
