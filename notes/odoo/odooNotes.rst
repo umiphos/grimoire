@@ -61,3 +61,18 @@ Aparently is just an inherit of the filter/search view, after that we just make 
 </xpath>
 
 If you want to make other fields in the search, just add pipe | and then add any other value you want. Remember that the context value you are writing in the search field, is self.
+
+
+Setting the same value to a list of fields
+==========================================
+
+Let's say that we have an object and we want to set a series of fields, then you probably are going to make a loop
+and acces for all the elements like 
+
+for field in fields:
+    setattr(object, field, 'value')
+
+This setattr can be done throught odoo with object._cache[field] = 'value'
+
+This is just to keep the things the odoo-way
+
