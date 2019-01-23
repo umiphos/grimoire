@@ -57,3 +57,11 @@ sudo apt install compizconfig-settings-manager compiz-plugins-extra
 
 # We need this, is to set names to add names to desktops
 sudo apt install compiz compizconfig-settings-manager compiz-plugins
+
+#Instalando teamviewer https://vitux.com/how-to-install-teamviewer-on-ubuntu/
+cd /tmp
+wget https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
+sudo apt-key add TeamViewer2017.asc
+sudo sh -c 'echo "deb http://linux.teamviewer.com/deb stable main" >> /etc/apt/sources.list.d/teamviewer.list'
+sudo apt update
+sudo apt install teamviewer
