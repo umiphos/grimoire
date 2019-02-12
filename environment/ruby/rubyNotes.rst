@@ -22,3 +22,10 @@ We just set the path like this:
 export PATH=$PATH:path_to_gems
 ```
 
+Installing ruby and gem in ubuntu
+=================================
+
+
+**Source:**
+https://onextrapixel.com/start-jekyll-blog-github-pages-free/
+
