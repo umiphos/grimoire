@@ -10,3 +10,15 @@ Example
 gem install package --install-dir $HOME/.gem
 ```
 
+Problems with PATH
+==================
+
+First, you need to understand that if you mess this variable you will end up without any software file usefull in the terminal, so, be careful.
+Changing the Path is one way to ensure linux to recognise the gems while calling them
+
+We just set the path like this:
+
+```
+export PATH=$PATH:path_to_gems
+```
+
