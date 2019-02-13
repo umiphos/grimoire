@@ -1,0 +1,18 @@
+# sphinx build directories
+_build/
+
+# dotfiles
+.*
+!.gitignore
+!.mailmap
+# compiled python files
+*.py[co]
+__pycache__/
+# emacs backup files
+*~
+# hg stuff
+*.orig
+status
+
+# various virtualenv
+/src/
