@@ -23,3 +23,11 @@ Creando un backup para no actualizar cada vez si cometes un error
 =================================================================
 
 createdb -O odoo -T base_que_copiaremos base nueva
+
+
+Copiando una base de datos sin hacer backup
+===========================================
+https://dba.stackexchange.com/questions/137636/how-to-duplicate-the-database-in-postgresql
+
+createdb -T old_db new_db;
+
