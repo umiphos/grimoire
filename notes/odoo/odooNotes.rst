@@ -76,3 +76,17 @@ This setattr can be done throught odoo with object._cache[field] = 'value'
 
 This is just to keep the things the odoo-way
 
+
+Domain for a field Many2one filtered by Many2Many
+=================================================
+
+If you need to make a filter based on another field that has many ids(many2many)
+yo need to make the domain as follows
+
+https://www.odoo.com/fr_FR/forum/aide-1/question/problem-with-domain-on-view-how-to-filter-this-127579
+in the python
+many2many_field fields.Many2many('my_module')
+
+
+in the XML
+<field name="to_filter" domain="[('id', '=', many2many_field and many2many_field[0] and many2many_field[0][2] or False)]"/>
