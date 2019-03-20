@@ -90,3 +90,16 @@ many2many_field fields.Many2many('my_module')
 
 in the XML
 <field name="to_filter" domain="[('id', '=', many2many_field and many2many_field[0] and many2many_field[0][2] or False)]"/>
+
+
+Remove a group from an existing menuitem
+=========================================
+
+https://www.odoo.com/forum/help-1/question/hide-menu-for-existing-group-18704
+The idea is to allow a menuitem to be used for any group or an specific group
+
+```xml
+<record id="original_module.menu_id" model="ir.ui.menu">
+    <field name="groups_id" eval="[(3,ref('my_new_group_id'))]"/>
+</record>
+```
