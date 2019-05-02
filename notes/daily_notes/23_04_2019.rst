@@ -1,0 +1,15 @@
+Estamos copiando _l10n_mx_edi_create_taxes_cfdi_values de l10_mx_edi
+Encontramos que se agrega un campo a los impuestos l10n_mx_cfdi_tax_type, revisar si lo agrega la localización o lo agrega l10n_mx
+
+**Para evitar retrasos y perdidas de tiempo**:
+
+- Agregaremos los taxes como data
+	- ISC(aun no, investigaremos al respecto antes de agregarlo)
+	- Exportación
+	- Exonerado
+	- Inafecto
+- De momento solo haremos Exonerado para cubrir el caso FF12
+
+- Agregaremos los campos que creemos necesarios. done
+- Pondremos los tests en verde
+- Discutiremos con Nhomar al respectoCrystal Castles - Concrete

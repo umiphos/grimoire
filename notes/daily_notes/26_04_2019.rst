@@ -1,0 +1,61 @@
+With the task 32530 we have a problem in the point where we need to print the txt summary. This summary has the information about the transport and destination of a product.
+
+Print tons of documents
+-------------------------
+
+The idea is that if we select more than one document in the tree view, we will get the option to print all the selected reports in one document. This sunds good, but still we need to do 2 thing:
+
+- Support many to many in this custom report
+- It should allow us to work with the tree view
+
+Work so far
+------------
+
+We found that requests.put(URL) gave us what we need, we haven't figured out how to send our login to this method. But it appears to work.
+
+We found this solution and we are going to try it first.
+https://www.odoo.com/es_ES/forum/ayuda-1/question/is-there-to-generate-or-print-a-txt-file-just-like-how-to-print-generate-a-pdf-file-in-odoo-122446
+
+
+Estoy apunto de hacer mejor el XML,  creo que me ahorrara tiempo.
+
+
+DFM Let's do the XML report... it's imposible to make it with the txt report...
+
+
+
+29/04/2019
+
+We are working now with the XML report, we ha've avandoned every idea to do it in the txt report.
+
+
+We face with only 2 problems:
+
+- Specify the positions
+- Jump of line if the lines exceed
+
+It says something about a jump line
+https://www.odoo.com/forum/help-1/question/how-to-jump-on-next-index-of-t-t-foreach-doc-line-ids-t-as-line-in-qweb-template-odoo-10-147675
+
+A simple yet effective way to do this is passing the data as tuples, I think this is the best way right now.
+https://www.odoo.com/forum/help-1/question/report-how-to-use-page-break-in-a-tr-120645
+
+
+Tenemos un posible problema, no debemos generar XML porque para las impresoras Dot matrix puede resultar muy pesado el formato... debemos hacer una prueba.
+
+- Tenemos esta alternativa.
+https://github.com/OCA/report-print-send/tree/10.0/base_report_to_printer
+
+
+Ya enviamos la prueba con Cristian, veremos que sale
+
+https://apps.openerp.com/apps/7.0/report_geraldo/
+
+
+
+
+Ideas de seguir usando attachment
+==================================
+
+Comentan que usemos report_type="qweb-html"
+https://www.odoo.com/es_ES/forum/ayuda-1/question/how-to-export-text-file-solved-75879
