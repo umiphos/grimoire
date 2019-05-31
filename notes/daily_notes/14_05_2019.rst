@@ -1,0 +1,14 @@
+Refactor to Catalog 7 Tax affectation type
+https://git.vauxoo.com/vauxoo/odoo-peru/issues/667
+Importante, ya que debemos tener esto calculado de manera correcta antes de continuar con el resto de documentos.
+4hrs
+
+FF70 external commerce
+https://git.vauxoo.com/vauxoo/odoo-peru/issues/656
+Es importante agregar esto, ya que estamos bloqueando que mucho del desarrollo se haga por causa de que los clientes no son peruanos, mientras que si debemos permitir que los partners sean extranjeros debemos bloquear a la empresa de serlo.
+
+FF90 BB90 no tributary data in documents
+https://git.vauxoo.com/vauxoo/odoo-peru/issues/658
+Es similar a lo que se hara en FF70, solo agregar el soporte a tipo de VAT a 0
+
+
