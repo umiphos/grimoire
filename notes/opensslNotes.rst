@@ -9,3 +9,9 @@ openssl pkcs12 -export -out certificate.pfx -inkey server.key -in new_just_broug
 
 crt to cer
 openssl x509 -inform PEM -in new_just_brought_certificate.crt -out new_just_converted_same_certificate_pe.cer
+
+read cer
+openssl x509 -in file.cer -noout -text
+
+p12 to cer
+openssl pkcs12 -in file.p12 -clcerts -out file.cer
