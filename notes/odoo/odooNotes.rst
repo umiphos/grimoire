@@ -103,3 +103,29 @@ The idea is to allow a menuitem to be used for any group or an specific group
     <field name="groups_id" eval="[(3,ref('my_new_group_id'))]"/>
 </record>
 ```
+
+
+Create filters and group by in view
+======================================
+
+It's pretty simple, in this example I'm going to use the account_invoice view.
+
+```xml
+<record id="view_account_invoice_filter_inherit" model="ir.ui.view">
+    <field name="name">account.invoice.filter.inherit</field>
+    <field name="model">account.invoice</field>
+    <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+    <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+            <filter name="l10n_pe_edi_document_type_invoice" string="Invoices" domain="[('l10n_pe_edi_document_type','=', '01')]"/>
+            <filter name="l10n_pe_edi_document_type_ticket" string="Tickets" domain="[('l10n_pe_edi_document_type','=', '03')]"/>
+        </xpath>
+        <xpath expr="//group" position="inside">
+            <filter name="journal_group" string="Journal" context="{'group_by':'journal_id'}"/>
+        </xpath>
+    </field>
+</record>
+```
+What we do here is 2 thinks, we add a new filter by the document type, actually we add 2 of them.
+
+The second part, in the group, it's meanth to group by the field I want it to be grouped, it's simple, but usually we miss this kind of examples.
