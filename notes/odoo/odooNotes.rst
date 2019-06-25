@@ -129,3 +129,23 @@ It's pretty simple, in this example I'm going to use the account_invoice view.
 What we do here is 2 thinks, we add a new filter by the document type, actually we add 2 of them.
 
 The second part, in the group, it's meanth to group by the field I want it to be grouped, it's simple, but usually we miss this kind of examples.
+
+How to add a favorite in odoo view?
+======================================
+
+This example is pretty simple, we are using a filter to add a favorite to the view.
+Also, this favorite is the default one.
+
+```xml
+<record id="myfavorite_filter" model="ir.filters">
+    <field name="name">My favorite</field>
+    <field name="model_id">account.invoice</field>
+    <field name="user_id" eval="False"/>
+    <field name="is_default">True</field>
+    <field name="domain" eval="[]"/>
+    <field name="context">{'group_by':'journal_id'}</field>
+</record>
+```
+
+I'm just grouping the journals by default, but it's pretty simple to make this filters
+For more options, check odoo/odoo/addons/base/models/ir_filters.py
