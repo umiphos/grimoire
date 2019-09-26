@@ -1,3 +1,5 @@
+Auto generated cert brought from comodossl
+
 create a csr
 openssl req -new -newkey rsa:2048 -nodes -keyout server.key -out server.csr
 
@@ -15,3 +17,15 @@ openssl x509 -in file.cer -noout -text
 
 p12 to cer
 openssl pkcs12 -in file.p12 -clcerts -out file.cer
+
+
+Certificate brought from camara de comercio
+
+p12 to cer
+openssl pkcs12 -in file.p12 -clcerts -out file.cer
+
+cer to pfx
+openssl pkcs12 -export -out kukyflor.pfx -in kuky_2019.cer
+
+read pfx
+openssl pkcs12 -in file.pfx -nodes
