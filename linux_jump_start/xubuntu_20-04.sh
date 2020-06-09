@@ -8,9 +8,16 @@ sudo apt-get upgrade
 sudo apt-get install vim
 sudo apt-get install git
 
-sudo apt-get install python-pip
-sudo apt-get install python-dev
+# Python https://python-guide-es.readthedocs.io/es/latest/starting/install3/linux.html
+sudo apt-get install python3.6
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python3.6
 
+# Pip https://www.itzgeek.com/post/how-to-install-pip-on-ubuntu-20-04/
+sudo apt install -y python3-pip
+
+# Postgress
 sudo apt-get install postgres-9.5
 sudo apt-get install postgresql-server-dev-9.5
 
