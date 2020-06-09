@@ -14,6 +14,9 @@ sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
 sudo apt-get install python3.6
 
+# Necesario para hacer funcoinar psycopg https://github.com/psycopg/psycopg2/issues/699
+sudo apt-get install libpq-dev
+
 # Pip https://www.itzgeek.com/post/how-to-install-pip-on-ubuntu-20-04/
 sudo apt install -y python3-pip
 
