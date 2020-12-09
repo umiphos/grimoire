@@ -32,3 +32,9 @@ openssl pkcs12 -in file.pfx -nodes
 
 pem to pfx without key
 openssl pkcs12 -export -out DIGIFLOW.pfx -in DIGIFLOW.pem
+
+pem check expiration date
+openssl x509 -enddate -noout -in file.pem
+
+pfx check expiration date
+openssl pkcs12 -in DIGIFLOW.pfx -nokeys | openssl x509 -noout -enddate
