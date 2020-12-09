@@ -29,3 +29,6 @@ openssl pkcs12 -export -out kukyflor.pfx -in kuky_2019.cer
 
 read pfx
 openssl pkcs12 -in file.pfx -nodes
+
+pem to pfx without key
+openssl pkcs12 -export -out DIGIFLOW.pfx -in DIGIFLOW.pem
